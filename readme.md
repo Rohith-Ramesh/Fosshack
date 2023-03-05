@@ -43,7 +43,7 @@ pip install imblearn
 pip install Counter
 pip install sklearn
 pip install pickle
-
+pip install tensorflow
 ```
 
 
@@ -51,10 +51,6 @@ The input is accepted from the user and is converted into an array format which 
 ```
 
 ```
-
-## Working
-
-This system provides a user friendly enviornment which enables the user to upload picture of crops and provide the details such as soil type , amount of Nitrogen, Phosphorous present in the soil. Here we implement two machine learning models one for crop detection and other mode is for the suggestion of fertilizer needed for that specific crop. When user input details regarding the crop , the crop detection model detects which crop is it and that result is forwarded into the Fertilizer prediction model which predicts the fertilizer required for the crop.
 
 
 
