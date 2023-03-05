@@ -49,7 +49,30 @@ pip install tensorflow
 
 The input is accepted from the user and is converted into an array format which is processed by the model and coressponding fertilizer is recommended.
 ```
+import pickle
+import xgboost as xgb
+with open('fertname_dict.pkl', 'rb') as f:
+    fert_dict = pickle.load(f)
 
+with open('soiltype_dict.pkl', 'rb') as f:
+    soil_dict = pickle.load(f)
+
+with open('svm_pipeline.pkl', 'rb') as f:
+    model = pickle.load(f)
+    
+with open('croptype_dict.pkl', 'rb') as f:
+    crop_dict = pickle.load(f)
+
+import numpy as np
+import pandas as pd
+data=np.array([30, 60, 63,  3,  1,  9,  9, 0]).reshape(1, -1)
+X=pd.DataFrame(data)
+
+print(X.values)
+
+y=model.predict(X.values)
+
+fert_dict.get(y[0])
 ```
 
 ## Working
